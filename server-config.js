@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var util = require('./lib/utility');
+var User = require('./app/models/user');
+var Link = require('./app/models/link');
 
 var handler = require('./lib/request-handler');
 

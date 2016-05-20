@@ -11,7 +11,7 @@ var Link = require('../app/models/link');
 // NOTE: these tests are designed for mongo!
 /////////////////////////////////////////////////////
 
-xdescribe('', function() {
+describe('', function() {
 
   beforeEach(function(done) {
     // Log out currently signed in user
@@ -29,7 +29,7 @@ xdescribe('', function() {
   });
 
   describe('Link creation: ', function() {
-
+    //This test is passing
     it('Only shortens valid urls, returning a 404 - Not found for invalid urls', function(done) {
       request(app)
         .post('/links')
@@ -40,7 +40,7 @@ xdescribe('', function() {
     });
 
     describe('Shortening links:', function() {
-
+      //This 
       it('Responds with the short code', function(done) {
         request(app)
           .post('/links')
@@ -170,6 +170,7 @@ xdescribe('', function() {
   }); // 'Privileged Access'
 
   describe('Account Creation:', function() {
+    this.timeout(2500);
 
     it('Signup creates a new user', function(done) {
       request(app)
@@ -206,6 +207,7 @@ xdescribe('', function() {
   }); // 'Account Creation'
 
   describe('Account Login:', function() {
+    this.timeout(2500);
 
     beforeEach(function(done) {
       new User({
